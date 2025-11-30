@@ -1,7 +1,7 @@
 # L3 Project
 
 ## Опис
-Цей проект є базовим веб-додатком на Node.js з використанням TypeScript, Express, MongoDB та React (через `express-react-views`). Підтримує сесійну аутентифікацію та захист даних.
+Цей проект є базовим веб-додатком на Node.js з використанням TypeScript, Express, MongoDB та React (через `express-react-views`).
 
 ---
 
@@ -27,8 +27,7 @@ npm install
 "dev": "nodemon --exec ts-node src/index.ts",
 "build": "tsc",
 "start": "node dist/index.js"
-
----
+```
 
 ## dotenv
 PORT=
