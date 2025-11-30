@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to the blog</h1>
+    <main>
+        <div id="posts-div">
+            <% if (user) { %>
+                <div class="create-post-div">
+                    <form id="create-post-form" style="display: flex; flex-direction: column; row-gap: 8px;">
+                        <input type="text" name="title" placeholder="Title" required />
+                        <textarea name="content" placeholder="Content" required></textarea>
+                        <button type="submit">Create Post</button>
+                    </form>
+                </div>
+            <% } %>
+            <% posts.forEach(post => { %>
+                <div class="post" id="post-<%=post._id%>">
+                    <div class="post-header">
+                        <h3><%= post.title %></h3>
+                        <h3><%= post.author %></h3>
+                    </div>
+                    <div class="post-main">
+                        <div class="post-content">
+                            <p><%= post.content %></p>
+                        </div>
+                        <% if(user && user.username === post.author) {%>
+                            <div class="post-controls">
+                                <button data-id="<%= post._id%>" class="edit">Edit</button>
+                                <button data-id="<%= post._id%>" class="delete">Delete</button>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+        <div id="session-div">
+            <% if (user) { %>
+                <div style="display: flex; flex-direction: column; align-items: center; row-gap: 8px;">
+                    <p>Logged in as: <%= user.username %></p>
+                    <form id="logoutForm">
+                        <button type="submit">Logout</button>
+                    </form>
+                </div>
+            <% } else { %>
+                <div id="auth-div">
+                    <form id="auth-form">
+                        <input name="username" placeholder="Username" />
+                        <input name="password" type="password" placeholder="Password" />
+                        <div style="width: 100%; display: flex; justify-content: space-between;">
+                            <button type="submit" data-action="login">Login</button>
+                            <button type="submit" data-action="register">Register</button>
+                        </div>
+                        <p id="auth-status" style="display: none;"></p>
+                    </form>
+                </div>
+            <% } %>
+        </div>
+    </main>
+</body>
+<script src="/script.js"></script>
+</html>

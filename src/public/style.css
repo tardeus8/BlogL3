@@ -1,0 +1,168 @@
+*{
+    color: white;
+    border-color: black;
+    box-sizing: border-box;
+}
+body {
+    --border: 2px solid rgba(255, 255, 255, 0.5);
+    --border-active: 2px solid rgba(255, 255, 255, 0.8);
+    --background-color: black;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 48px; 
+    margin-right: 16px; 
+}
+main{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    column-gap: 64px;
+}
+button{
+    border: 0px;
+}
+
+h2, h3, h4, h5, h6, p{
+    margin: 0px;
+}
+h1{
+    margin: 12px;
+    margin-bottom: 24px;
+    font-size: 48px;
+}
+h3{
+    font-size: 32px;
+}
+p{
+    font-size: 20px;
+}
+form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+#session-div{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+#posts-div{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: max-content;
+    row-gap: 16px;
+}
+.post, form.post-edit{
+    border: var(--border);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0px;
+}
+.post-header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: var(--border);
+    padding: 8px;
+}
+.post-content{
+    padding: 8px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    row-gap: 8px;
+    border-right: var(--border);
+}
+.post-controls{
+    width: 128px;
+    display: flex;
+    flex-direction: column;
+}
+.post-controls button{
+    width: 100%;
+    border-radius: 0px;
+}
+.post-controls button:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+textarea{
+    font-size: 20px;
+    background-color: black;
+}
+input, textarea{
+    font-weight: bold;
+    padding: 4px;
+    background-color: var(--background-color);
+    border: var(--border);
+    border-radius: 8px;
+    outline: none;
+}
+
+input:focus, textarea:focus{
+    border: var(--border-active);
+}
+
+button{
+    transition: 0.5s;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 20px;
+    width: fit-content;
+    background-color: var(--background-color);
+    font-weight: bold;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.create-post-div{
+    border: var(--border);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.create-post-div input, .create-post-div textarea{
+    width: 100%;
+}
+.post-main {
+    display: flex;
+}
+
+form.post-edit input[name="title"]{
+    padding: 0px;
+    font-size: 32px;
+    color: white;
+    border: none;
+}
+
+form.post-edit textarea{
+    font-size: 20px;
+    font-weight: inherit;
+    line-height: inherit;
+    color: white;
+    border: none;
+    resize: none;
+    padding: 0px;
+}
+
+.post-edit .post-header, .post-edit .post-main{
+    width: 100%;
+}
+
+form, 
+form input, 
+form textarea, 
+form select, 
+form button {
+    font-family: inherit;   /* наслідує шрифт батька */
+    line-height: inherit;   /* наслідує висоту рядка */
+}
