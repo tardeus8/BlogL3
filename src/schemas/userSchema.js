@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema({
     uuid: { type: String, required: true, unique: true },
@@ -6,4 +6,4 @@ const userSchema = new Schema({
     passwordHash: { type: String, required: true }
 });
 
-export default model("User", userSchema);
+module.exports = model("User", userSchema);

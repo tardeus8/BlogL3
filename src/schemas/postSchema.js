@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+const { Schema, model } = require("mongoose");
 
 const postSchema = new Schema({
     title: { type: String, required: true },
@@ -8,4 +8,4 @@ const postSchema = new Schema({
     editDate: { type: Date }
 });
 
-export default model("Post", postSchema);
+module.exports = model("Post", postSchema);
